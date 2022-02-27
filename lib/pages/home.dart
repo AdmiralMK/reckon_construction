@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 //import 'package:intl/intl.dart';
-import 'package:window_manager/window_manager.dart';
+//import 'package:window_manager/window_manager.dart';
 import 'package:awesome_dialog/awesome_dialog.dart';
 
 //import 'ishodmain.dart';
@@ -498,8 +498,8 @@ class _Drawer5State extends State<Drawer5> {
                       ),
                       onPressed: () async {
                         if (Platform.isWindows) {
-                          await windowManager.setOpacity(0.2);
-                          await windowManager.setAlwaysOnTop(true);
+                          //await windowManager.setOpacity(0.2);
+                          //await windowManager.setAlwaysOnTop(true);
                         }
                         SystemChannels.platform
                             .invokeMethod('SystemNavigator.pop');
@@ -545,10 +545,10 @@ class _Drawer5State extends State<Drawer5> {
                       ),
                       onPressed: () async {
                         if (Platform.isWindows) {
-                          await windowManager.setOpacity(1);
-                          await windowManager.setAlwaysOnTop(false);
+                          //await windowManager.setOpacity(1);
+                          //await windowManager.setAlwaysOnTop(false);
                           //await windowManager.setTitle("Расчёт объёмов земли");
-                          await windowManager.setTitleBarStyle('show');
+                          //await windowManager.setTitleBarStyle('show');
                         }
                       },
                     ),
