@@ -7,11 +7,8 @@
 #include "generated_plugin_registrant.h"
 
 #include <window_manager/window_manager_plugin.h>
-#include <window_utils/window_utils.h>
 
 void RegisterPlugins(flutter::PluginRegistry* registry) {
   WindowManagerPluginRegisterWithRegistrar(
       registry->GetRegistrarForPlugin("WindowManagerPlugin"));
-  WindowUtilsRegisterWithRegistrar(
-      registry->GetRegistrarForPlugin("WindowUtils"));
 }
