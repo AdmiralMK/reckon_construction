@@ -736,7 +736,7 @@ class _TextBoxFundShirina extends State<TextBoxFundShirina> {
             if ((!text.contains(".")) &
                 (text.length > 1) &
                 (double.parse("0$text") == 0)) {
-              num.parse("text");
+              num.parse("textTTT");
             }
             if (double.parse("0$text") > 9999.9999) num.parse("text");
             return newValue;
