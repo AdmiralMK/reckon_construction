@@ -733,6 +733,11 @@ class _TextBoxFundShirina extends State<TextBoxFundShirina> {
             text = text.replaceAll(",", ".");
             if (text.isNotEmpty) num.parse(text);
             if (text.replaceAll(".", "").length > 10) num.parse("text");
+            if ((!text.contains(".")) &
+                (text.length > 1) &
+                (double.parse("0$text") == 0)) {
+              num.parse("text");
+            }
             if (double.parse("0$text") > 9999.9999) num.parse("text");
             return newValue;
             // ignore: empty_catches
