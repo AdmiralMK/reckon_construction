@@ -19,7 +19,7 @@ String defFundVisota = "3.5";
 String defFundProhod = "0.6";
 
 class Drawer5 extends StatefulWidget {
-  const Drawer5({Key? key}) : super(key: key);
+  const Drawer5({Key key}) : super(key: key);
 
   @override
   State<Drawer5> createState() => _Drawer5State();
@@ -27,7 +27,7 @@ class Drawer5 extends StatefulWidget {
 
 class TextBoxFundProhod21 extends StatelessWidget {
   const TextBoxFundProhod21({
-    Key? key,
+    Key key,
   }) : super(key: key);
 
   @override
@@ -331,7 +331,7 @@ class _Drawer5State extends State<Drawer5> {
     super.dispose();
   }
 
-  late Size textSize;
+   Size textSize;
 
   @override
   Widget build(BuildContext context) {
@@ -773,7 +773,7 @@ class _TextBoxFundShirina extends State<TextBoxFundShirina> {
 
 class TextBoxFundDlina extends StatelessWidget {
   const TextBoxFundDlina({
-    Key? key,
+    Key key,
   }) : super(key: key);
 
   @override
@@ -822,7 +822,7 @@ class TextBoxFundDlina extends StatelessWidget {
 
 class TextBoxFundVisota extends StatelessWidget {
   const TextBoxFundVisota({
-    Key? key,
+    Key key,
   }) : super(key: key);
 
   @override
