@@ -8,8 +8,16 @@ name: Dart
 on:
   push:
     branches: [ master ]
+  #pull_request:
+  #  branches: [ master ]
+
   pull_request:
-    branches: [ master ]
+    branches:
+      - "dev/sprint-**"
+    paths-ignore:
+      - "docs/**"
+      - "openapi/**"
+      - ".vscode/**"
 
 jobs:
  build_apk_aab:
@@ -20,17 +28,25 @@ jobs:
      - uses: actions/setup-java@v1
        with:
          java-version: "12.x"
+         
      - name: Install NDK
        run: echo "y" | sudo ${ANDROID_HOME}/tools/bin/sdkmanager --install "ndk;20.0.5594570" --sdk_root=${ANDROID_SDK_ROOT}
      
      - uses: subosito/flutter-action@v1
        with:
          channel: "dev"
-     - run: flutter doctor
      - run: yes | flutter doctor --android-licenses
      - run: flutter pub get
      - run: flutter build apk --release
+     
+     - run: ls build/app/outputs/apk/release/
+     
      - uses: actions/upload-artifact@v1
        with:
          name: APK for QA
+         path: build/app/outputs/apk/release/app-release.apk
+     - name: Upload APK
+       uses: actions/upload-artifact@v2
+       with:
+         name: app-release.apk
          path: build/app/outputs/apk/release/app-release.apk
