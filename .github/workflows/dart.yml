@@ -27,10 +27,10 @@ jobs:
        with:
          channel: "dev"
      - run: flutter doctor
-     - run: flutter doctor --android-licenses
+     - run: yes | flutter doctor --android-licenses
      - run: flutter pub get
      - run: flutter build apk --release
      - uses: actions/upload-artifact@v1
        with:
          name: APK for QA
-         path: build/app/outputs/apk/dev/debug/apk_name.apk
+         path: build/app/outputs/apk/release/app-release.apk
