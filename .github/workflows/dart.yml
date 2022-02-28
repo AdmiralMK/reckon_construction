@@ -27,6 +27,7 @@ jobs:
        with:
          channel: "dev"
      - run: flutter doctor
+     - run: flutter doctor --android-licenses
      - run: flutter pub get
      - run: flutter build apk --release
      - uses: actions/upload-artifact@v1
