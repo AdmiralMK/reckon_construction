@@ -13,7 +13,7 @@ TextEditingController textFundDlina = TextEditingController();
 TextEditingController textFundVisota = TextEditingController();
 TextEditingController textFundProhod = TextEditingController();
 
-String defFundShirina = "2.5";
+String defFundShirina = "3.5";
 String defFundDlina = "6";
 String defFundVisota = "3.5";
 String defFundProhod = "0.6";
@@ -760,8 +760,7 @@ class _TextBoxFundShirina extends State<TextBoxFundShirina> {
         contentPadding: const EdgeInsets.all(15),
         border: const OutlineInputBorder(),
         //icon: Icon(Icons.crop_portrait),
-        labelText: 'Ширина фундамента $defFundShirina' +
-            (defFundShirina == "" ? "" : " м"),
+        labelText: 'Ширина фундамента',
         hintText: 'Введите ширину фундамента или подготовки.',
         prefixText: 'B=',
         suffixText: 'м',
