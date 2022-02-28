@@ -18,23 +18,16 @@ jobs:
    steps:
      - uses: actions/checkout@v1
      - uses: nttld/setup-ndk@v1
-       id: setup-ndk
+     - uses: actions/setup-java@v1
        with:
-         ndk-version: r21e
-         add-to-path: false
-     - run: ./build.sh
-       env:
-        ANDROID_NDK_HOME: ${{ steps.setup-ndk.outputs.ndk-path }}
-     
-     #- uses: actions/setup-java@v1
-     #  with:
-     #    java-version: "12.x"
-     #- name: Install NDK
-     #  run: echo "y" | sudo ${ANDROID_HOME}/tools/bin/sdkmanager --install "ndk;20.0.5594570" --sdk_root=${ANDROID_SDK_ROOT}
+         java-version: "12.x"
+     - name: Install NDK
+       run: echo "y" | sudo ${ANDROID_HOME}/tools/bin/sdkmanager --install "ndk;20.0.5594570" --sdk_root=${ANDROID_SDK_ROOT}
      
      - uses: subosito/flutter-action@v1
        with:
-         channel: "stable"
+         channel: "dev"
+     - run: flutter doctor
      - run: flutter pub get
      - run: flutter build apk --release
      - uses: actions/upload-artifact@v1
