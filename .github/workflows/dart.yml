@@ -41,10 +41,10 @@ jobs:
      
      - run: ls build/app/outputs/apk/release/
      
-     - uses: actions/upload-artifact@v1
-       with:
-         name: APK for QA
-         path: build/app/outputs/apk/release/app-release.apk
+     #- uses: actions/upload-artifact@v1
+     #  with:
+     #    name: APK for QA
+     #    path: build/app/outputs/apk/release/app-release.apk
      - name: Upload APK
        uses: actions/upload-artifact@v2
        with:
